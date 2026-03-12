@@ -1,16 +1,23 @@
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
 
+import modelVeo from "@/assets/model-veo.jpg";
+import modelRunway from "@/assets/model-runway.jpg";
+import modelSuno from "@/assets/model-suno.jpg";
+import model4o from "@/assets/model-4o.jpg";
+import modelFlux from "@/assets/model-flux.jpg";
+import modelNano from "@/assets/model-nano.jpg";
+
 const CTA_LINK = "https://kie.ai?ref=7aeab286e5dd98f649125ca37e966864";
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
 const models = [
-  { name: "Google Veo 3.1", category: "Video Generation", desc: "Cinematic motion, strong prompt adherence, and synchronized audio in native 1080p." },
-  { name: "Runway Aleph", category: "Video Generation", desc: "Multi-task editing — add/remove objects, relight footage, change angles via text prompts." },
-  { name: "Suno API", category: "Music Generation", desc: "Realistic vocals, precise lyric-to-melody alignment, and high-quality multi-genre production." },
-  { name: "4o Image API", category: "Image Generation", desc: "High-fidelity visuals with accurate text rendering and flexible style control." },
-  { name: "Flux.1 Kontext", category: "Image Generation", desc: "Vivid, coherent scenes with strong subject consistency for detailed outputs." },
-  { name: "Nano Banana", category: "Image Generation", desc: "Fast and precise AI image generation with realistic physics simulation." },
+  { name: "Google Veo 3.1", category: "Video Generation", desc: "Cinematic motion, strong prompt adherence, and synchronized audio in native 1080p.", image: modelVeo },
+  { name: "Runway Aleph", category: "Video Generation", desc: "Multi-task editing — add/remove objects, relight footage, change angles via text prompts.", image: modelRunway },
+  { name: "Suno API", category: "Music Generation", desc: "Realistic vocals, precise lyric-to-melody alignment, and high-quality multi-genre production.", image: modelSuno },
+  { name: "4o Image API", category: "Image Generation", desc: "High-fidelity visuals with accurate text rendering and flexible style control.", image: model4o },
+  { name: "Flux.1 Kontext", category: "Image Generation", desc: "Vivid, coherent scenes with strong subject consistency for detailed outputs.", image: modelFlux },
+  { name: "Nano Banana", category: "Image Generation", desc: "Fast and precise AI image generation with realistic physics simulation.", image: modelNano },
 ];
 
 const ModelsSection = () => (
@@ -37,15 +44,25 @@ const ModelsSection = () => (
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.4, delay: i * 0.07, ease }}
-            className="group rounded-2xl border border-border bg-background p-6 transition-all duration-300 hover:shadow-lg hover:border-accent/30"
+            className="group rounded-2xl border border-border bg-background overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-accent/30"
           >
-            <span className="inline-block text-xs font-semibold text-accent bg-accent/10 rounded-full px-3 py-1">
-              {m.category}
-            </span>
-            <h3 className="mt-4 text-lg font-bold text-foreground">{m.name}</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
-            <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-3 transition-all duration-200">
-              Learn More <ArrowRight className="w-4 h-4" />
+            <div className="aspect-[4/3] overflow-hidden">
+              <img
+                src={m.image}
+                alt={m.name}
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                loading="lazy"
+              />
+            </div>
+            <div className="p-6">
+              <span className="inline-block text-xs font-semibold text-accent bg-accent/10 rounded-full px-3 py-1">
+                {m.category}
+              </span>
+              <h3 className="mt-3 text-lg font-bold text-foreground">{m.name}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
+              <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-3 transition-all duration-200">
+                Learn More <ArrowRight className="w-4 h-4" />
+              </div>
             </div>
           </motion.a>
         ))}
