@@ -1,8 +1,8 @@
 import { motion } from "framer-motion";
 import { Video, Image, Music, MessageSquare, ArrowRight } from "lucide-react";
 
-import featureVideo from "@/assets/feature-video.jpg";
-import featureImage from "@/assets/feature-image.jpg";
+import featureVideo from "@/assets/feature-video.png";
+import featureImage from "@/assets/feature-image.png";
 import featureMusic from "@/assets/feature-music.jpg";
 import featureChat from "@/assets/feature-chat.jpg";
 
