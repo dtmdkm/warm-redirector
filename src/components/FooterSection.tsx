@@ -1,10 +1,12 @@
+import { Link } from "react-router-dom";
+
 const CTA_LINK = "https://kie.ai?ref=1b1f37bc2dbdda958f9c78ee38171437";
 
 const links = [
-  { label: "About", href: CTA_LINK },
-  { label: "Contact", href: CTA_LINK },
-  { label: "Privacy Policy", href: CTA_LINK },
-  { label: "Terms of Service", href: CTA_LINK },
+  { label: "About", href: CTA_LINK, external: true },
+  { label: "Contact", href: CTA_LINK, external: true },
+  { label: "Privacy Policy", href: "/privacy-policy", external: false },
+  { label: "Terms of Service", href: CTA_LINK, external: true },
 ];
 
 const FooterSection = () => (
@@ -19,17 +21,27 @@ const FooterSection = () => (
         </div>
 
         <div className="flex items-center gap-6">
-          {links.map((l) => (
-            <a
-              key={l.label}
-              href={l.href}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-sm text-muted-foreground hover:text-foreground transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
+          {links.map((l) =>
+            l.external ? (
+              <a
+                key={l.label}
+                href={l.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </a>
+            ) : (
+              <Link
+                key={l.label}
+                to={l.href}
+                className="text-sm text-muted-foreground hover:text-foreground transition-colors"
+              >
+                {l.label}
+              </Link>
+            )
+          )}
         </div>
       </div>
 
