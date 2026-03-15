@@ -1,36 +1,34 @@
 import { motion } from "framer-motion";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 
-const ease = [0.25, 0.1, 0.25, 1] as const;
-
 const faqs = [
-  { q: "What is Kie.ai and how does it work?", a: "Kie.ai is an AI platform providing advanced AI APIs designed for developers and businesses. It offers powerful AI APIs for text generation, music creation, video generation and more." },
-  { q: "Does Kie.ai offer a free trial for new users?", a: "Yes, Kie.ai offers a free trial that allows you to explore the capabilities of our AI APIs before committing to any paid plan." },
-  { q: "What is the Kie.ai pricing model?", a: "Kie.ai provides flexible pricing with a point-based system, making it cost-effective for startups. Detailed pricing plans are available on our website." },
-  { q: "What AI APIs does Kie.ai provide?", a: "Kie.ai provides advanced AI model APIs, including Veo 3.1 for video generation, Runway API for video creation, Suno API for music generation, and 4o Image API, Flux.1 Kontext API for image generation." },
-  { q: "Is there API documentation available?", a: "Yes, Kie.ai provides comprehensive API documentation that covers integration steps, configuration details, and best practices." },
-  { q: "How do I integrate Kie.ai APIs into my project?", a: "Simply sign up for an account, obtain your API key, and follow the API documentation for configuration. Contact support@kie.ai for assistance." },
+  { q: "What is Kie Signup?", a: "Kie Signup is an AI developer platform that gives you access to powerful APIs for video generation, image creation, music production, and conversational AI — all in one place." },
+  { q: "Is there a free tier?", a: "Yes! You can create a free account and start exploring our AI APIs immediately. No credit card required." },
+  { q: "What AI models are available?", a: "We offer APIs for video generation (Veo 3.1, Runway), image generation (4o Image, Flux Kontext), music generation (Suno), and chat/LLM models." },
+  { q: "How do I integrate the APIs?", a: "Sign up, get your API key, and follow our documentation. Most integrations take less than 5 minutes." },
+  { q: "What kind of support do you offer?", a: "We provide 24/7 developer support, comprehensive documentation, and code examples for all our APIs." },
 ];
 
 const FAQSection = () => (
-  <section className="py-24 sm:py-32 bg-secondary">
+  <section id="faq" className="py-24 sm:py-32 bg-secondary/50">
     <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.h2
+      <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, ease }}
-        className="text-3xl sm:text-4xl font-black text-center text-foreground tracking-tight"
+        transition={{ duration: 0.5 }}
+        className="text-center mb-12"
       >
-        Frequently Asked Questions
-      </motion.h2>
+        <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
+          Frequently Asked Questions
+        </h2>
+      </motion.div>
 
       <motion.div
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5, delay: 0.1, ease }}
-        className="mt-12"
+        transition={{ duration: 0.5, delay: 0.1 }}
       >
         <Accordion type="single" collapsible className="space-y-3">
           {faqs.map((f, i) => (
