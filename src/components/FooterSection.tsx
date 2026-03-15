@@ -1,4 +1,4 @@
-const CTA_LINK = "https://kie.ai?ref=7aeab286e5dd98f649125ca37e966864";
+const CTA_LINK = "https://kie.ai?ref=1b1f37bc2dbdda958f9c78ee38171437";
 
 const FooterSection = () => (
   <footer className="border-t border-border">

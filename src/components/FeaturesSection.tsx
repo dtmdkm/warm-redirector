@@ -6,7 +6,7 @@ import featureImage from "@/assets/feature-image.png";
 import featureMusic from "@/assets/feature-music.jpg";
 import featureChat from "@/assets/feature-chat.jpg";
 
-const CTA_LINK = "https://kie.ai?ref=7aeab286e5dd98f649125ca37e966864";
+const CTA_LINK = "https://kie.ai?ref=1b1f37bc2dbdda958f9c78ee38171437";
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
 const features = [
