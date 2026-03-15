@@ -98,7 +98,7 @@ const HeroSection = () => (
                 <span className="text-foreground">fetch</span>
                 <span className="text-muted-foreground">(</span>
               </div>
-              <div className="pl-4 text-emerald-600 dark:text-emerald-400">"https://api.kie.ai/v1/generate"</div>
+              <div className="pl-4 text-primary/70">"https://api.kie.ai/v1/generate"</div>
               <div className="text-muted-foreground">,{"{"}</div>
               <div className="pl-4">
                 <span className="text-foreground">method</span>
