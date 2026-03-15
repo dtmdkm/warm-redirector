@@ -21,7 +21,7 @@ const HeroSection = () => (
             transition={{ duration: 0.5 }}
             className="inline-flex items-center gap-2 rounded-full border border-border bg-secondary px-4 py-1.5 text-sm text-muted-foreground mb-8"
           >
-            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
+            <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
             Now available — Start building for free
           </motion.div>
 
