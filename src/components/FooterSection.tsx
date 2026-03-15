@@ -1,10 +1,10 @@
 const CTA_LINK = "https://kie.ai?ref=1b1f37bc2dbdda958f9c78ee38171437";
 
 const links = [
-  { label: "About", href: CTA_LINK },
-  { label: "Contact", href: CTA_LINK },
-  { label: "Privacy Policy", href: CTA_LINK },
-  { label: "Terms of Service", href: CTA_LINK },
+  { label: "About", href: CTA_LINK, external: true },
+  { label: "Contact", href: CTA_LINK, external: true },
+  { label: "Privacy Policy", href: "/privacy-policy", external: false },
+  { label: "Terms of Service", href: CTA_LINK, external: true },
 ];
 
 const FooterSection = () => (
