@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "kie-signup.online"
+        }
+      ],
+      "destination": "https://www.kie-signup.online/:path*",
+      "permanent": true
+    },
+    {
       "source": "/",
       "destination": "https://kie.ai/?ref=1b1f37bc2dbdda958f9c78ee38171437",
       "permanent": false
