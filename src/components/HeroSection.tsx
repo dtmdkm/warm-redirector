@@ -111,9 +111,9 @@ const HeroSection = () => (
                 <span className="text-muted-foreground">: {"{"}</span>
               </div>
               <div className="pl-8">
-                <span className="text-emerald-600 dark:text-emerald-400">"Authorization"</span>
+                <span className="text-primary/70">"Authorization"</span>
                 <span className="text-muted-foreground">: </span>
-                <span className="text-emerald-600 dark:text-emerald-400">`Bearer $&#123;API_KEY&#125;`</span>
+                <span className="text-primary/70">`Bearer $&#123;API_KEY&#125;`</span>
               </div>
               <div className="pl-4 text-muted-foreground">{"}"}</div>
               <div className="text-muted-foreground">{"}"});</div>
