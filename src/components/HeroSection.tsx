@@ -103,7 +103,7 @@ const HeroSection = () => (
               <div className="pl-4">
                 <span className="text-foreground">method</span>
                 <span className="text-muted-foreground">: </span>
-                <span className="text-emerald-600 dark:text-emerald-400">"POST"</span>
+                <span className="text-primary/70">"POST"</span>
                 <span className="text-muted-foreground">,</span>
               </div>
               <div className="pl-4">
