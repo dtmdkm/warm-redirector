@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { Play, Palette, Layers, Bot } from "lucide-react";
+import useCasesImage from "@/assets/use-cases.jpg";
 
 const useCases = [
   { icon: Play, title: "AI Video Generator Apps", desc: "Build apps that create marketing videos, social media content, and cinematic clips from text." },
@@ -26,23 +27,41 @@ const UseCasesSection = () => (
         </p>
       </motion.div>
 
-      <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-        {useCases.map((uc, i) => (
-          <motion.div
-            key={uc.title}
-            initial={{ opacity: 0, y: 16 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="rounded-xl border border-border bg-background p-6 text-center"
-          >
-            <div className="inline-flex items-center justify-center w-12 h-12 rounded-xl bg-primary/10 mb-4">
-              <uc.icon className="w-6 h-6 text-primary" />
-            </div>
-            <h3 className="text-base font-bold text-foreground">{uc.title}</h3>
-            <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{uc.desc}</p>
-          </motion.div>
-        ))}
+      <div className="mt-16 grid lg:grid-cols-2 gap-12 items-center">
+        {/* Image */}
+        <motion.div
+          initial={{ opacity: 0, x: -20 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <img
+            src={useCasesImage}
+            alt="AI use cases - video, content, SaaS, automation"
+            className="w-full rounded-xl border border-border shadow-lg"
+            loading="lazy"
+          />
+        </motion.div>
+
+        {/* Cards */}
+        <div className="grid gap-4 sm:grid-cols-2">
+          {useCases.map((uc, i) => (
+            <motion.div
+              key={uc.title}
+              initial={{ opacity: 0, y: 16 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.4, delay: i * 0.08 }}
+              className="rounded-xl border border-border bg-background p-5"
+            >
+              <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center mb-3">
+                <uc.icon className="w-5 h-5 text-primary" />
+              </div>
+              <h3 className="text-base font-bold text-foreground">{uc.title}</h3>
+              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{uc.desc}</p>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </div>
   </section>
