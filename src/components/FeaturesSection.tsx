@@ -1,76 +1,68 @@
 import { motion } from "framer-motion";
 import { Video, Image, Music, MessageSquare, ArrowRight } from "lucide-react";
 
-import featureVideo from "@/assets/feature-video-new.jpg";
-import featureImage from "@/assets/feature-image-new.jpg";
-import featureMusic from "@/assets/feature-music-new.jpg";
-import featureChat from "@/assets/feature-chat-new.jpg";
+import featureVideo from "@/assets/feature-video.png";
+import featureImage from "@/assets/feature-image.png";
+import featureMusic from "@/assets/feature-music.jpg";
+import featureChat from "@/assets/feature-chat.jpg";
 
-const CTA_LINK = "https://kie.ai?ref=1b1f37bc2dbdda958f9c78ee38171437";
+const CTA_LINK = "https://kie.ai?ref=7aeab286e5dd98f649125ca37e966864";
+const ease = [0.25, 0.1, 0.25, 1] as const;
 
 const features = [
   {
     icon: Video,
-    title: "AI Video Generation API",
-    desc: "Create stunning videos from text prompts. Generate cinematic content with synchronized audio and smooth motion.",
-    tag: "Video",
+    title: "AI Video Generation APIs",
+    desc: "Create high-quality videos with Veo 3.1, Veo 3.1 Fast, and Runway Aleph. Synchronized audio, smooth motion, and realistic scenes.",
     image: featureVideo,
   },
   {
     icon: Image,
-    title: "AI Image Generation API",
-    desc: "Generate high-quality images with AI models. From photorealistic renders to creative illustrations.",
-    tag: "Image",
+    title: "AI Image Generation APIs",
+    desc: "Produce high-quality, style-rich images with 4o Image API, Flux Kontext API, and Nano Banana API.",
     image: featureImage,
   },
   {
     icon: Music,
-    title: "AI Music Generation API",
-    desc: "Produce music and soundtracks with AI. Support for multiple genres, vocals, and instrumentals.",
-    tag: "Music",
+    title: "AI Music Generation APIs",
+    desc: "Create high-quality music with Suno API, supporting V3.5, V4, V4.5, and V4.5 Plus models. Tracks up to 8 minutes long.",
     image: featureMusic,
   },
   {
     icon: MessageSquare,
-    title: "AI Chat API",
-    desc: "Build chatbots and AI assistants. Power conversational AI with advanced language models.",
-    tag: "Chat",
+    title: "LLM & AI Chat APIs",
+    desc: "Power your applications with advanced LLM and AI Chat APIs for natural conversations, coding help, and knowledge-based responses.",
     image: featureChat,
   },
 ];
 
 const FeaturesSection = () => (
-  <section id="features" className="py-24 sm:py-32">
-    <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-      <motion.div
+  <section className="py-24 sm:py-32">
+    <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <motion.h2
         initial={{ opacity: 0, y: 16 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
-        className="text-center max-w-2xl mx-auto"
+        transition={{ duration: 0.5, ease }}
+        className="text-3xl sm:text-4xl font-black text-center text-foreground tracking-tight"
       >
-        <h2 className="text-3xl sm:text-4xl font-extrabold text-foreground tracking-tight">
-          Powerful AI APIs
-        </h2>
-        <p className="mt-4 text-muted-foreground text-lg">
-          Everything you need to build AI-powered applications, all accessible through a single platform.
-        </p>
-      </motion.div>
+        AI APIs for Any Project
+      </motion.h2>
 
-      <div className="mt-16 grid gap-6 sm:grid-cols-2">
+      <div className="mt-16 grid gap-8 md:grid-cols-2">
         {features.map((f, i) => (
           <motion.a
             key={f.title}
             href={CTA_LINK}
             target="_blank"
             rel="noopener noreferrer"
-            initial={{ opacity: 0, y: 16 }}
+            initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{ duration: 0.4, delay: i * 0.08 }}
-            className="group relative rounded-xl border border-border bg-card overflow-hidden transition-all duration-300 hover:border-primary/30 hover:shadow-lg hover:shadow-primary/5"
+            transition={{ duration: 0.5, delay: i * 0.1, ease }}
+            className="group relative rounded-2xl border border-border bg-background overflow-hidden transition-all duration-300 hover:shadow-lg hover:border-accent/30"
           >
-            <div className="aspect-[16/10] overflow-hidden">
+            <div className="aspect-[16/9] overflow-hidden">
               <img
                 src={f.image}
                 alt={f.title}
@@ -78,19 +70,14 @@ const FeaturesSection = () => (
                 loading="lazy"
               />
             </div>
-            <div className="p-6">
-              <div className="flex items-center gap-3 mb-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <f.icon className="w-5 h-5 text-primary" />
-                </div>
-                <span className="text-xs font-semibold text-primary bg-primary/10 rounded-full px-2.5 py-0.5">
-                  {f.tag}
-                </span>
+            <div className="p-8">
+              <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                <f.icon className="w-6 h-6 text-accent" />
               </div>
-              <h3 className="text-lg font-bold text-foreground">{f.title}</h3>
-              <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{f.desc}</p>
-              <div className="mt-4 inline-flex items-center gap-1.5 text-sm font-semibold text-primary group-hover:gap-3 transition-all">
-                Get Started <ArrowRight className="w-4 h-4" />
+              <h3 className="text-xl font-bold text-foreground">{f.title}</h3>
+              <p className="mt-3 text-muted-foreground leading-relaxed">{f.desc}</p>
+              <div className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-accent group-hover:gap-3 transition-all duration-200">
+                Get API Key <ArrowRight className="w-4 h-4" />
               </div>
             </div>
           </motion.a>

@@ -8,7 +8,7 @@ import model4o from "@/assets/model-4o.jpg";
 import modelFlux from "@/assets/model-flux.jpg";
 import modelNano from "@/assets/model-nano.jpg";
 
-const CTA_LINK = "https://kie.ai?ref=1b1f37bc2dbdda958f9c78ee38171437";
+const CTA_LINK = "https://kie.ai?ref=7aeab286e5dd98f649125ca37e966864";
 const ease = [0.25, 0.1, 0.25, 1] as const;
 
 const models = [
