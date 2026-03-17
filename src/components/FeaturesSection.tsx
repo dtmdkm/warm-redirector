@@ -3,8 +3,8 @@ import { Video, Image, Music, MessageSquare, ArrowRight } from "lucide-react";
 
 import featureVideo from "@/assets/feature-video.png";
 import featureImage from "@/assets/feature-image.png";
-import featureMusic from "@/assets/feature-music.jpg";
-import featureChat from "@/assets/feature-chat.jpg";
+import featureMusic from "@/assets/feature-music.png";
+import featureChat from "@/assets/feature-chat.png";
 
 const CTA_LINK = "https://kie.ai?ref=1b1f37bc2dbdda958f9c78ee38171437";
 const ease = [0.25, 0.1, 0.25, 1] as const;
